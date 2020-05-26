@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mServerTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mThe Server[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should successfully create user when everything is valid[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not create user if request is invalid[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should successfully add product when everything is valid[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not add product if request is invalid[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should successfully add products to card when everything is valid[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not add item to card if request is invalid[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should successfully retrieve the checkout list[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not retrieve the checkout list[0m[0m

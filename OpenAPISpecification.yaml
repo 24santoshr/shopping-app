@@ -1,0 +1,157 @@
+swagger: '2.0'
+info:
+  description: >-
+    The backend interface of the Shopping website application registry
+  version: 1.5.0
+  title: Shopping App Registry
+host: 'localhost:9000'
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  /shop/users/add:
+    post:
+      tags:
+        - Website Management
+      summary: Adds a new users for the website
+      description: >-
+        Adds a new user that is passed in the requests entity. The id of the
+        user will be returned.
+      operationId: addUser
+      parameters:
+        - in: body
+          name: ShoppingUser
+          description: The user to add
+          required: true
+          schema:
+            type: object
+            required:
+              - userName
+              - emailId
+              - bankAcctNo
+            properties:
+              userName:
+                type: string
+                example: DummyUser
+              emailId:
+                type: string
+                example: Dummy@email.de
+              bankAcctNo:
+                type: string
+                example: BCH3242
+                  
+      responses:
+        '200':
+          description: 'OK, user has been added, id is returned'
+          schema:
+            type: integer
+            format: int64
+            example: 42
+        '400':
+          description: 'Bad request, name already exists'
+  /shop/products/add:
+    post:
+      tags:
+        - Website Management
+      summary: Adds a new products for the website
+      description: >-
+        Adds a new product that is passed in the requests entity. The id of the
+        user will be returned.
+      operationId: addProduct
+      parameters:
+        - in: body
+          name: ShoppingProduct
+          description: The product to add
+          required: true
+          schema:
+            type: object
+            required:
+              - productName
+              - price
+              - itemCount
+            properties:
+              productName:
+                type: string
+                example: SampleProduct
+              price:
+                type: integer
+                example: 10
+              itemCount:
+                type: integer
+                example: 20
+                  
+      responses:
+        '200':
+          description: 'OK, product has been added, id is returned'
+          schema:
+            type: integer
+            format: int64
+            example: 42
+        '400':
+          description: 'Bad request, product already exists' 
+  /shop/products/carditems:
+    post:
+      tags:
+        - Shopping Card Management
+      summary: Adds items to shopping card for user
+      description: >-
+        Adds items to shopping card that is passed in the requests entity. The id of the
+        user will be returned.
+      operationId: AddCardItems
+      parameters:
+        - in: body
+          name: CardItems
+          description: The items to add
+          required: true
+          schema:
+            type: object
+            required:
+              - userName
+              - productName
+              - quantity
+              - price
+            properties:
+              userName:
+                type: string
+                example: DummyUser
+              productName:
+                type: string
+                example: DummyProduct
+              quantity:
+                type: integer
+                example: 5
+              price:
+                type: integer
+                example: 50
+                  
+      responses:
+        '200':
+          description: 'OK, item has been added, id is returned'
+          schema:
+            type: integer
+            format: int64
+            example: 42
+        '400':
+          description: 'Bad request, Items not added to card'  
+  /shop/products/checkout:
+    get:
+      tags:
+        - Shopping Card Management
+      summary: Get checkout list for specified user
+      description: >-
+        This command retrieves a list of all items present in the checkout lis
+      operationId: getItemList
+      parameters:
+        - name: UserName
+          in: query
+          description: Checkout list to be retrieved for user
+          required: true
+          type: string
+      responses:
+        '200':
+          description: List of items for specified user
+        '400':
+          description: Invalid value
+  

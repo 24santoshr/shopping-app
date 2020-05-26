@@ -4,7 +4,7 @@ package shoppingapp
 import akka.actor._
 import akka.stream.ActorMaterializer
 import shoppingapp.connection.Server
-import shoppingapp.daos.{AuthDAO, InMemoryDAO}
+import shoppingapp.daos.{ShopDAO, InMemoryDAO}
 
 import scala.concurrent.ExecutionContext
 import scala.language.postfixOps
@@ -17,9 +17,9 @@ object Registry extends AppLogging {
 
   val configuration = new Configuration()
 
-  private val authDao: AuthDAO = new InMemoryDAO(configuration)
+  private val shopDAO: ShopDAO = new InMemoryDAO(configuration)
 
-  private val requestHandler = new RequestHandler(configuration, authDao)
+  private val requestHandler = new RequestHandler(configuration, shopDAO)
 
   private val server: Server = new Server(requestHandler)
 
@@ -30,6 +30,4 @@ object Registry extends AppLogging {
     requestHandler.shutdown()
     system.terminate()
   }
-
-
 }

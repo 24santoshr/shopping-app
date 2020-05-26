@@ -1,0 +1,11 @@
+[0m[[0m[31merror[0m] [0m[0m/home/santosh/Documents/shopping-app/src/test/scala/shoppingapp/connection/ServerTest.scala:49:16: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : None.type[0m
+[0m[[0m[31merror[0m] [0m[0m required: Long[0m
+[0m[[0m[31merror[0m] [0m[0m    quantity = None, price = None, currency = None).toJson(CardItemsJsonSupportFormat).toString()[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/santosh/Documents/shopping-app/src/test/scala/shoppingapp/connection/ServerTest.scala:49:30: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : None.type[0m
+[0m[[0m[31merror[0m] [0m[0m required: Long[0m
+[0m[[0m[31merror[0m] [0m[0m    quantity = None, price = None, currency = None).toJson(CardItemsJsonSupportFormat).toString()[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

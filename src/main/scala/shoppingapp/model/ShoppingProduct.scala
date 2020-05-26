@@ -7,4 +7,6 @@ trait ShoppingProductJsonSupport extends SprayJsonSupport with DefaultJsonProtoc
   implicit val ShoppingProductFormat: JsonFormat[ShoppingProduct] = jsonFormat6(ShoppingProduct)
 }
 
-final case class ShoppingProduct(productId: Option[Long], productName: String, price: Option[Long], currency: Option[String], productDesc: Option[String], itemCount: Option[Long])
+final case class ShoppingProduct(productId: Option[Long], productName: String,
+                                 price: Long, currency: Option[String],
+                                 productDesc: Option[String], itemCount: Long)

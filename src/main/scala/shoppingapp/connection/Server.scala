@@ -60,11 +60,16 @@ class Server(handler: RequestHandler) extends HttpApp
         }
     }
 
-
+  /**Creates a new user for the website
+    *
+    * @param UserString
+    * @return
+    */
   def addUser(UserString: String): server.Route = Route.seal {
 
+
     post {
-      log.debug(s"POST /users/add has been called, parameter is: $UserString")
+      log.debug(s"POST shop/users/add has been called, parameter is: $UserString")
       try {
         val paramInstance: ShoppingUser = UserString.parseJson.convertTo[ShoppingUser](authShoppingUserFormat)
         handler.handleAddUser(paramInstance) match {
@@ -74,12 +79,12 @@ class Server(handler: RequestHandler) extends HttpApp
             }
           case Failure(ex) =>
             log.error(ex, "Failed to handle create user request.")
-            complete(HttpResponse(StatusCodes.BadRequest, entity = "Username or Email Id already taken."))
+            complete(HttpResponse(StatusCodes.BadRequest, entity = "Username already taken."))
         }
       } catch {
         case dx: DeserializationException =>
           log.error(dx, "Deserialization exception")
-          complete(HttpResponse(StatusCodes.BadRequest, entity = s"Could not deserialize parameter user with message ${dx.getMessage}."))
+          complete(HttpResponse(StatusCodes.BadRequest, entity = s"Could not deserialize parameter delphi user with message ${dx.getMessage}."))
         case px: ParsingException =>
           log.error(px, "Failed to parse JSON while registering")
           complete(HttpResponse(StatusCodes.BadRequest, entity = s"Failed to parse JSON entity with message ${px.getMessage}"))
@@ -87,14 +92,19 @@ class Server(handler: RequestHandler) extends HttpApp
           log.error(x, "Uncaught exception while deserializing.")
           complete(HttpResponse(StatusCodes.InternalServerError, entity = "An internal server error occurred."))
       }
-    }
 
+    }
   }
 
+  /**Creates a new product for the website
+    *
+    * @param ProductString
+    * @return
+    */
   def addProduct(ProductString: String): server.Route = Route.seal {
 
     post {
-      log.debug(s"POST /products/add has been called, parameter is: $ProductString")
+      log.debug(s"POST shop/products/add has been called, parameter is: $ProductString")
       try {
         val paramInstance: ShoppingProduct = ProductString.parseJson.convertTo[ShoppingProduct](ShoppingProductFormat)
         handler.handleAddProduct(paramInstance) match {
@@ -103,7 +113,7 @@ class Server(handler: RequestHandler) extends HttpApp
               productId.toString
             }
           case Failure(ex) =>
-            log.error(ex, "Failed to handle create user request.")
+            log.error(ex, "Failed to add product.")
             complete(HttpResponse(StatusCodes.BadRequest, entity = "Product was not added."))
         }
       } catch {
@@ -121,10 +131,15 @@ class Server(handler: RequestHandler) extends HttpApp
 
   }
 
+  /**Adds products associated with a particular user to Card
+    *
+    * @param ItemString
+    * @return
+    */
   def AddCardItems(ItemString: String): server.Route = Route.seal {
 
     post {
-      log.debug(s"POST /products/carditems has been called, parameter is: $ItemString")
+      log.debug(s"POST shop/products/carditems has been called, parameter is: $ItemString")
       try {
         val paramInstance: CardItems = ItemString.parseJson.convertTo[CardItems](CardItemsJsonSupportFormat)
         handler.handleAddCardItems(paramInstance) match {
@@ -133,8 +148,8 @@ class Server(handler: RequestHandler) extends HttpApp
               productId.toString
             }
           case Failure(ex) =>
-            log.error(ex, "Failed to handle create user request.")
-            complete(HttpResponse(StatusCodes.BadRequest, entity = "shoppingapp.daos.Items not added to card."))
+            log.error(ex, "Failed to add items to card.")
+            complete(HttpResponse(StatusCodes.BadRequest, entity = "Items not added to card."))
         }
       } catch {
         case dx: DeserializationException =>
@@ -151,11 +166,15 @@ class Server(handler: RequestHandler) extends HttpApp
 
   }
 
+  /**Returns the checkout item list
+    *
+    * @return
+    */
   def checkout(): server.Route = parameters('UserName.as[String].?) { userNameString =>
     get {
-      log.debug(s"GET shop/product/checkout?UserName=$userNameString has been called")
+      log.debug(s"GET shop/products/checkout?UserName=$userNameString has been called")
 
-      val emptyListMsg = s"The Card is empty for $userNameString. Please add items to the List"
+      val emptyListMsg = s"The Card is empty for $userNameString. Please add items"
 
       if (userNameString != null) {
 
