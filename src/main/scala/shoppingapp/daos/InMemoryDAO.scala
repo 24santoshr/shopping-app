@@ -233,7 +233,7 @@ class InMemoryDAO(configuration: Configuration) extends AppLogging with ShopDAO 
 
         checkouts.add(newOrder)
 
-        log.info(s"New order created. Order Id is $id ${checkout.deliveryAddress.toString}")
+        log.info(s"New order created. Order Id is $id")
         Success(id)
       }
     } else {
@@ -254,7 +254,7 @@ class InMemoryDAO(configuration: Configuration) extends AppLogging with ShopDAO 
       (checkouts.map(i => i.orderId.getOrElse(0L)) max) + 1L
     }
   }
-  
+
   private def dataToObjectProduct(shoppingProduct: ShoppingProduct): ShoppingProduct = {
     ShoppingProduct(shoppingProduct.productId, shoppingProduct.productName, shoppingProduct.price, shoppingProduct.currency, shoppingProduct.productDesc, shoppingProduct.itemCount)
   }

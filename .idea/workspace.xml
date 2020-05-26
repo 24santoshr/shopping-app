@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69400e2-53d9-425a-bd2a-fed8ae010279" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/AppLogging.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/Configuration.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/Registry$.class" beforeDir="false" />
@@ -25,9 +23,6 @@
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingUser.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/UserJsonSupport.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/shoppingapp/connection/ServerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,8 +45,8 @@
       <file leaf-file-name="InMemoryDAO.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="256" column="2" selection-start-line="256" selection-start-column="2" selection-end-line="256" selection-end-column="2" />
+            <state relative-caret-position="215">
+              <caret line="234" lean-forward="true" selection-start-line="234" selection-end-line="234" />
               <folding>
                 <element signature="e#26#55#0" expanded="true" />
               </folding>
@@ -163,6 +158,7 @@
       <find>getProductWithName</find>
       <find>getProductWithI</find>
       <find>getProductWithId</find>
+      <find>isCardEmpty</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -518,12 +514,12 @@
       <option name="presentableId" value="Default" />
       <updated>1590079904500</updated>
       <workItem from="1590079908302" duration="73361000" />
-      <workItem from="1590366454398" duration="48542000" />
+      <workItem from="1590366454398" duration="48966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121903000" />
+    <option name="totallyTimeSpent" value="122327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -834,8 +830,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="256" column="2" selection-start-line="256" selection-start-column="2" selection-end-line="256" selection-end-column="2" />
+        <state relative-caret-position="215">
+          <caret line="234" lean-forward="true" selection-start-line="234" selection-end-line="234" />
           <folding>
             <element signature="e#26#55#0" expanded="true" />
           </folding>
