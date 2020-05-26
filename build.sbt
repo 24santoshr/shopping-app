@@ -20,17 +20,6 @@ libraryDependencies += "com.typesafe.akka" %% "akka-http-testkit" % "10.1.5"
 
 libraryDependencies += "com.pauldijou" %% "jwt-core" % "1.0.0"
 
-/*
-lazy val registry = (project in file(".")).
-  enablePlugins(JavaAppPackaging).
-  enablePlugins(DockerPlugin).
-  enablePlugins(ScalastylePlugin).
-  settings(
-    dockerBaseImage := "openjdk:jre-alpine"
-  ).
-  enablePlugins(AshScriptPlugin)
-*/
-
 libraryDependencies ++= List(
   "com.typesafe.slick" %% "slick" % "3.2.3",
   "com.typesafe.slick" %% "slick-hikaricp" % "3.2.3",
