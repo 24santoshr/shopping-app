@@ -42,18 +42,10 @@ trait ShopDAO {
     * @param checkout
     * @return
     */
+
   def addCheckout(checkout: Checkout): Try[Long]
 
-  /**Returns Product by taking Product Id
-    *
-    * @param id
-    * @return
-    */
-
-  def getProductWithId(id: Long): Option[ShoppingProduct]
-
-
-    /**Returns Product by taking Product Name
+  /**Returns Product by taking Product Name
     *
     * @param productName
     * @return

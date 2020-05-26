@@ -254,17 +254,7 @@ class InMemoryDAO(configuration: Configuration) extends AppLogging with ShopDAO 
       (checkouts.map(i => i.orderId.getOrElse(0L)) max) + 1L
     }
   }
-
-  override def getProductWithId(id: Long): Option[ShoppingProduct] = {
-    if (hasProductWithId(id)) {
-      val query = products filter { i => i.productId.get == id }
-      val result = query.iterator.next()
-      Some(dataToObjectProduct(result))
-    } else {
-      None
-    }
-  }
-
+  
   private def dataToObjectProduct(shoppingProduct: ShoppingProduct): ShoppingProduct = {
     ShoppingProduct(shoppingProduct.productId, shoppingProduct.productName, shoppingProduct.price, shoppingProduct.currency, shoppingProduct.productDesc, shoppingProduct.itemCount)
   }
