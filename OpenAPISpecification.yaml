@@ -14,7 +14,7 @@ paths:
   /shop/users/add:
     post:
       tags:
-        - Website Management
+        - Shopping Website Management
       summary: Adds a new users for the website
       description: >-
         Adds a new user that is passed in the requests entity. The id of the
@@ -51,6 +51,7 @@ paths:
             example: 42
         '400':
           description: 'Bad request, name already exists'
+          
   /shop/products/add:
     post:
       tags:
@@ -135,7 +136,7 @@ paths:
             example: 42
         '400':
           description: 'Bad request, Items not added to card'  
-  /shop/products/checkout:
+  /shop/products/viewcard:
     get:
       tags:
         - Shopping Card Management
@@ -154,4 +155,46 @@ paths:
           description: List of items for specified user
         '400':
           description: Invalid value
-  
+  /shop/products/checkout:
+    post:
+      tags:
+        - Shopping Card Management
+      summary: Checkout and generate order id
+      description: >-
+        Checkout and generate order id.
+      operationId: AddCheckout
+      parameters:
+        - in: body
+          name: Checkout
+          description: Checkout and generate order id
+          required: true
+          schema:
+            type: object
+            required:
+              - userName
+              - deliveryAddress
+              - price
+              - quantity
+            properties:
+              userName:
+                type: string
+                example: DummyUser
+              deliveryAddress:
+                type: string
+                example: DummyAddress
+              price:
+                type: integer
+                example: 50
+              quantity:
+                type: integer
+                example: 1
+                  
+      responses:
+        '200':
+          description: 'OK, Order Id has been generated'
+          schema:
+            type: integer
+            format: int64
+            example: 42
+        '400':
+          description: 'Bad request, Order Id has not been generated'

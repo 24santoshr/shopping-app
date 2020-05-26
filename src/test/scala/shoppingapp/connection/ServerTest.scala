@@ -5,7 +5,7 @@ import akka.http.scaladsl.model.{ContentTypes, HttpEntity}
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.testkit.ScalatestRouteTest
 import org.scalatest.{Matchers, WordSpec}
-import shoppingapp.daos.{ShopDAO, InMemoryDAO}
+import shoppingapp.daos.{InMemoryDAO, ShopDAO}
 import shoppingapp.model._
 import shoppingapp.{Configuration, RequestHandler}
 import spray.json._
@@ -17,7 +17,8 @@ class ServerTest
     with ScalatestRouteTest
     with CardItemsJsonSupport
     with UserJsonSupport
-    with ShoppingProductJsonSupport {
+    with ShoppingProductJsonSupport
+    with CheckoutJsonSupport {
 
   private val configuration: Configuration = new Configuration()
   private val shopDAO: ShopDAO = new InMemoryDAO(configuration)
@@ -50,6 +51,13 @@ class ServerTest
     quantity = 5, price = 125, currency = None).toJson(CardItemsJsonSupportFormat).toString()
   private val noCardUser = validJsonCardItems.replace(""""userName":"validUser",""", "")
   private val noCardProduct = validJsonCardItems.replace(""""productName":"SampleProduct",""", "")
+
+  private val validJsonCheckout = Checkout(orderId = None, userName = "validUser",
+    price = 125, quantity = 1, deliveryAddress = "DummyAddress").toJson(CheckoutJsonSupportFormat
+  ).toString
+
+
+  private val noUserName = validJsonCheckout.replace(""""userName":"validUser",""", "")
 
 
   override def beforeAll(): Unit = {
@@ -157,13 +165,13 @@ class ServerTest
     //retrieve checkout list
     "successfully retrieve the checkout list" in {
 
-      Get("/shop/products/checkout?UserName=validUser") ~> Route.seal(server.routes) ~> check {
+      Get("/shop/products/viewcard?UserName=validUser") ~> Route.seal(server.routes) ~> check {
         assert(status === StatusCodes.OK)
         responseAs[String].parseJson.convertTo[List[CardItems]](listFormat(CardItemsJsonSupportFormat))
       }
 
-    //should retrieve a empty list with message
-      Get("/shop/products/checkout?UserName=dummy") ~> Route.seal(server.routes) ~> check {
+      //should retrieve a empty list with message
+      Get("/shop/products/viewcard?UserName=dummy") ~> Route.seal(server.routes) ~> check {
         assert(status === StatusCodes.OK)
         // responseAs[String].parseJson.convertTo[List[CardItems]](listFormat(CardItemsJsonSupportFormat))
       }
@@ -171,11 +179,28 @@ class ServerTest
     "not retrieve the checkout list" in {
 
       //no parameter
-      Get("/shop/products/checkout?UserName") ~> Route.seal(server.routes) ~> check {
+      Get("/shop/products/viewcard?UserName") ~> Route.seal(server.routes) ~> check {
         assert(status === StatusCodes.OK)
         // responseAs[String].parseJson.convertTo[List[CardItems]](listFormat(CardItemsJsonSupportFormat))
       }
     }
 
+    "successfully checkout and generate order id" in {
+
+      Post("/shop/products/checkout", HttpEntity(ContentTypes.`application/json`, validJsonCheckout.stripMargin)) ~>
+        Route.seal(server.routes) ~> check {
+        assert(status === StatusCodes.OK)
+      }
+
+    }
+
+    "not generate order id" in {
+
+      //no parameter
+      Post("/shop/products/checkout", HttpEntity(ContentTypes.`application/json`, noUserName.stripMargin)) ~>
+        Route.seal(server.routes) ~> check {
+        assert(status === StatusCodes.BAD_REQUEST)
+      }
+    }
   }
 }

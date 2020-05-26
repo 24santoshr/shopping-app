@@ -1,6 +1,6 @@
 package shoppingapp.daos
 
-import shoppingapp.model.{CardItems, ShoppingProduct, ShoppingUser}
+import shoppingapp.model.{CardItems, Checkout, ShoppingProduct, ShoppingUser}
 
 import scala.util.Try
 
@@ -37,11 +37,19 @@ trait ShopDAO {
     */
   def addCardItems(cardItems: CardItems): Try[Long]
 
+  /**Checkout function
+    *
+    * @param checkout
+    * @return
+    */
+  def addCheckout(checkout: Checkout): Try[Long]
+
   /**Returns Product by taking Product Id
     *
     * @param id
     * @return
     */
+
   def getProductWithId(id: Long): Option[ShoppingProduct]
 
 

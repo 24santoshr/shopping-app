@@ -2,88 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69400e2-53d9-425a-bd2a-fed8ae010279" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/shoppingapp/connection/ServerTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/_global/testListeners/_global/streams/out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/runtime/exportedProducts/_global/streams/export" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/compileBinaryFileInputs/previous" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/compileOutputs/previous" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/definedTestNames/data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/dependencyClasspathFiles/previous" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/discoveredMainClasses/data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/managedSourcePaths/previous" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/compile/_global/streams/out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.12.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/compileIncremental/_global/streams/export" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/compileIncremental/_global/streams/out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/copyResources/_global/streams/copy-resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/copyResources/_global/streams/out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/definedTests/_global/streams/out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/dependencyClasspath/_global/streams/export" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/exportedProducts/_global/streams/export" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/fullClasspath/_global/streams/export" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/internalDependencyClasspath/_global/streams/export" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/loadedTestFrameworks/_global/streams/out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/test/_global/streams/out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/test/_global/streams/succeeded_tests" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/streams/test/test/isModule=false name=shoppingapp.connection.ServerTest/test/out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-reports/TEST-shoppingapp.connection.ServerTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/model/Checkout.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$df7b5ef2d9b44279b4fe$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$df7b5ef2d9b44279b4fe.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$df7b5ef2d9b44279b4fe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/Configuration.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/Configuration.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/Registry.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/Registry.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenAPISpecification.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/OpenAPISpecification.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/RequestHandler.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/RequestHandler.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/connection/Server.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/connection/Server.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/AuthDAO.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/model/CardItems.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/model/CardItems.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingProduct.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingProduct.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingUser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingUser.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/shoppingapp/RequestHandlerTest.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/Tables.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/shoppingapp/connection/ServerTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/shoppingapp/connection/ServerTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/shoppingapp/daos/InMemoryDAOTest.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/Configuration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/Configuration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/Registry$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/Registry$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/Registry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/Registry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/RequestHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/RequestHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/connection/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/connection/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/AuthDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/ShopDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/InMemoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/InMemoryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/CardItems$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/CardItems$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/CardItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/CardItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/CardItemsJsonSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/CardItemsJsonSupport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingProduct$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingProduct$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingProductJsonSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingProductJsonSupport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingUser$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingUser$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingUserEnums$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingUserEnums$ShoppingUserType$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/ShoppingUserEnums.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/UserJsonSupport$$anon$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/UserJsonSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/model/UserJsonSupport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/shopping-app_2.12-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/shopping-app_2.12-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/_global/_global/checkBuildSources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/_global/checkBuildSources/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/Items.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/Products.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/ShopDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/ShopDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/StringLengthDefinitions$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/StringLengthDefinitions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/shoppingapp/daos/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/shoppingapp/connection/ServerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/test-classes/shoppingapp/connection/ServerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.12.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.12.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/exportedProductJars/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/exportedProductJars/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/exportedProducts/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/output" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/runtime/dependencyClasspathAsJars/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/runtime/dependencyClasspathAsJars/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/runtime/exportedProductJars/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/runtime/exportedProductJars/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/runtime/fullClasspathAsJars/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/runtime/fullClasspathAsJars/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/runtime/internalDependencyAsJars/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/runtime/internalDependencyAsJars/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.12.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compileIncSetup/_global/streams/inc_compile_2.12.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/compileIncremental/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/definedTests/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/definedTests/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/test/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/test/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/test/_global/streams/succeeded_tests" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/test/_global/streams/succeeded_tests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/test/isModule=false name=shoppingapp.connection.ServerTest/test/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/test/isModule=false name=shoppingapp.connection.ServerTest/test/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-reports/TEST-shoppingapp.connection.ServerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-reports/TEST-shoppingapp.connection.ServerTest.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -103,11 +53,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Server.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InMemoryDAO.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="237" column="7" lean-forward="true" selection-start-line="237" selection-start-column="7" selection-end-line="237" selection-end-column="7" />
+              <folding>
+                <element signature="e#26#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopDAO.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+              <folding>
+                <element signature="e#26#103#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Checkout.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/model/Checkout.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="71" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="71" />
+              <folding>
+                <element signature="e#28#92#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenAPISpecification.yaml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OpenAPISpecification.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="590">
+              <caret line="182" column="28" lean-forward="true" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/connection/Server.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="168" column="35" lean-forward="true" selection-start-line="168" selection-start-column="35" selection-end-line="168" selection-end-column="35" />
+            <state relative-caret-position="675">
+              <caret line="60" column="26" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="26" />
               <folding>
                 <element signature="e#32#61#0" expanded="true" />
               </folding>
@@ -115,13 +110,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardItems.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/model/CardItems.scala">
+      <file leaf-file-name="ServerTest.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/shoppingapp/connection/ServerTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="48" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="48" />
+            <state relative-caret-position="695">
+              <caret line="199" column="92" selection-start-line="199" selection-start-column="92" selection-end-line="199" selection-end-column="92" />
               <folding>
-                <element signature="e#27#91#0" expanded="true" />
+                <element signature="e#32#74#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestHandler.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/RequestHandler.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+              <folding>
+                <element signature="e#21#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -211,14 +218,17 @@
         <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingUser.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/shoppingapp/daos/InMemoryDAOTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/AuthDAO.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/shoppingapp/connection/ServerTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/Configuration.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/Registry.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/RequestHandler.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/connection/Server.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingProduct.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/model/Checkout.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/RequestHandler.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/Tables.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/connection/Server.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/shoppingapp/connection/ServerTest.scala" />
+        <option value="$PROJECT_DIR$/OpenAPISpecification.yaml" />
       </list>
     </option>
   </component>
@@ -510,12 +520,12 @@
       <option name="presentableId" value="Default" />
       <updated>1590079904500</updated>
       <workItem from="1590079908302" duration="73361000" />
-      <workItem from="1590366454398" duration="40646000" />
+      <workItem from="1590366454398" duration="47571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114007000" />
+    <option name="totallyTimeSpent" value="120932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -647,13 +657,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/daos/StringLengthDefinitions.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/daos/Items.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/daos/Products.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/Tables.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/model/UserJsonSupport.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/model/ShoppingUserEnums.scala" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/rmi/registry/Registry.class">
@@ -720,46 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
-          <folding>
-            <element signature="e#26#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingUser.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#27#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/RequestHandler.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="81" column="26" lean-forward="true" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
-          <folding>
-            <element signature="e#21#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding>
-            <element signature="e#26#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/Registry.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -777,16 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/shoppingapp/connection/ServerTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="e#32#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingProduct.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -799,21 +752,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/model/CardItems.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="48" />
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
             <element signature="e#27#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/model/ShoppingUser.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="e#27#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/Tables.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="68" column="1" lean-forward="true" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/RequestHandler.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+          <folding>
+            <element signature="e#21#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/ShopDAO.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="e#26#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/connection/Server.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="168" column="35" lean-forward="true" selection-start-line="168" selection-start-column="35" selection-end-line="168" selection-end-column="35" />
+        <state relative-caret-position="675">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="26" />
           <folding>
             <element signature="e#32#61#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/daos/InMemoryDAO.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="237" column="7" lean-forward="true" selection-start-line="237" selection-start-column="7" selection-end-line="237" selection-end-column="7" />
+          <folding>
+            <element signature="e#26#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/shoppingapp/connection/ServerTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="199" column="92" selection-start-line="199" selection-start-column="92" selection-end-line="199" selection-end-column="92" />
+          <folding>
+            <element signature="e#32#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/shoppingapp/model/Checkout.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="71" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="71" />
+          <folding>
+            <element signature="e#28#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenAPISpecification.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="182" column="28" lean-forward="true" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
         </state>
       </provider>
     </entry>

@@ -18,7 +18,8 @@ class Server(handler: RequestHandler) extends HttpApp
   with AppLogging
   with UserJsonSupport
   with ShoppingProductJsonSupport
-  with CardItemsJsonSupport {
+  with CardItemsJsonSupport
+  with CheckoutJsonSupport {
 
   implicit val system: ActorSystem = Registry.system
   implicit val materializer: ActorMaterializer = ActorMaterializer()
@@ -54,13 +55,18 @@ class Server(handler: RequestHandler) extends HttpApp
                 jsonString => AddCardItems(jsonString)
               }
             } ~
+            path("viewcard") {
+              viewCard()
+            } ~
             path("checkout") {
-              checkout()
+              entity(as[String]) {
+                jsonString => Checkout(jsonString)
+              }
             }
         }
     }
 
-  /**Creates a new user for the website
+  /** Creates a new user for the website
     *
     * @param UserString
     * @return
@@ -96,7 +102,7 @@ class Server(handler: RequestHandler) extends HttpApp
     }
   }
 
-  /**Creates a new product for the website
+  /** Creates a new product for the website
     *
     * @param ProductString
     * @return
@@ -131,7 +137,7 @@ class Server(handler: RequestHandler) extends HttpApp
 
   }
 
-  /**Adds products associated with a particular user to Card
+  /** Adds products associated with a particular user to Card
     *
     * @param ItemString
     * @return
@@ -166,13 +172,13 @@ class Server(handler: RequestHandler) extends HttpApp
 
   }
 
-  /**Returns the checkout item list
+  /** Returns the checkout item list
     *
     * @return
     */
-  def checkout(): server.Route = parameters('UserName.as[String].?) { userNameString =>
+  def viewCard(): server.Route = parameters('UserName.as[String].?) { userNameString =>
     get {
-      log.debug(s"GET shop/products/checkout?UserName=$userNameString has been called")
+      log.debug(s"GET shop/products/viewcard?UserName=$userNameString has been called")
 
       val emptyListMsg = s"The Card is empty for $userNameString. Please add items"
 
@@ -200,6 +206,40 @@ class Server(handler: RequestHandler) extends HttpApp
     }
   }
 
+  /** Checksout and retuns a new Order id
+    *
+    * @param CheckoutStr
+    * @return
+    */
+  def Checkout(CheckoutStr: String): server.Route = Route.seal {
+
+    post {
+      log.debug(s"POST shop/products/checkout has been called, parameter is: $CheckoutStr")
+      try {
+        val paramInstance: Checkout = CheckoutStr.parseJson.convertTo[Checkout](CheckoutJsonSupportFormat)
+        handler.handleCheckout(paramInstance) match {
+          case Success(orderId) =>
+            complete {
+              orderId.toString
+            }
+          case Failure(ex) =>
+            log.error(ex, "Failed to checkout.")
+            complete(HttpResponse(StatusCodes.BadRequest, entity = "Failed to checkout."))
+        }
+      } catch {
+        case dx: DeserializationException =>
+          log.error(dx, "Deserialization exception")
+          complete(HttpResponse(StatusCodes.BadRequest, entity = s"Could not deserialize parameter user with message ${dx.getMessage}."))
+        case px: ParsingException =>
+          log.error(px, "Failed to parse JSON while registering")
+          complete(HttpResponse(StatusCodes.BadRequest, entity = s"Failed to parse JSON entity with message ${px.getMessage}"))
+        case x: Exception =>
+          log.error(x, "Uncaught exception while deserializing.")
+          complete(HttpResponse(StatusCodes.InternalServerError, entity = "An internal server error occurred."))
+      }
+    }
+
+  }
 
 }
 

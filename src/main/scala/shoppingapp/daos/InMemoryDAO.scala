@@ -2,7 +2,7 @@ package shoppingapp.daos
 
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
-import shoppingapp.model.{CardItems, ShoppingProduct, ShoppingUser}
+import shoppingapp.model.{CardItems, Checkout, ShoppingProduct, ShoppingUser}
 import shoppingapp.{AppLogging, Configuration, Registry}
 
 import scala.collection.mutable
@@ -18,6 +18,8 @@ class InMemoryDAO(configuration: Configuration) extends AppLogging with ShopDAO 
   private val users: mutable.Set[ShoppingUser] = new mutable.HashSet[ShoppingUser]()
   private val products: mutable.Set[ShoppingProduct] = new mutable.HashSet[ShoppingProduct]()
   private val carditems: mutable.Set[CardItems] = new mutable.HashSet[CardItems]()
+  private val checkouts: mutable.Set[Checkout] = new mutable.HashSet[Checkout]()
+
 
   override def initialize(): Unit = {
     log.info("Initializing ShopDAO...")
@@ -59,11 +61,6 @@ class InMemoryDAO(configuration: Configuration) extends AppLogging with ShopDAO 
     query.nonEmpty
   }
 
-  def hasUserWithName(userName: String): Boolean = {
-    val query = users filter { i => i.userName.toLowerCase == userName.toLowerCase }
-    query.nonEmpty
-  }
-
   private def nextId(): Long = {
     if (users.isEmpty) {
       0L
@@ -96,11 +93,6 @@ class InMemoryDAO(configuration: Configuration) extends AppLogging with ShopDAO 
     } else {
       (products.map(i => i.productId.getOrElse(0L)) max) + 1L
     }
-  }
-
-  def hasProductWithName(name: String): Boolean = {
-    val query = products filter { i => i.productName.toLowerCase == name.toLowerCase }
-    query.nonEmpty
   }
 
   override def addCardItems(cardItems: CardItems): Try[Long] = {
@@ -182,6 +174,11 @@ class InMemoryDAO(configuration: Configuration) extends AppLogging with ShopDAO 
     }
   }
 
+  def hasProductWithName(name: String): Boolean = {
+    val query = products filter { i => i.productName.toLowerCase == name.toLowerCase }
+    query.nonEmpty
+  }
+
   override def getUserWithName(userName: String): Option[ShoppingUser] = {
     if (hasUserWithUsername(userName)) {
       val query = users filter { i => i.userName.toLowerCase == userName.toLowerCase }
@@ -218,6 +215,44 @@ class InMemoryDAO(configuration: Configuration) extends AppLogging with ShopDAO 
   def hasItemWithId(id: Long): Boolean = {
     val query = carditems filter { i => i.productId.get == id }
     query.nonEmpty
+  }
+
+  override def addCheckout(checkout: Checkout): Try[Long] = {
+
+    if (hasUserWithName(checkout.userName)) {
+
+      if (checkout.deliveryAddress.toString.isEmpty) {
+        Failure(new RuntimeException(s"Please select delivery address."))
+      }
+
+      else {
+        checkouts filter { i => i.userName == checkout.userName } map checkouts.remove
+
+        val id = orderId()
+        val newOrder = Checkout(Some(id), checkout.userName, checkout.price, checkout.quantity, checkout.deliveryAddress)
+
+        checkouts.add(newOrder)
+
+        log.info(s"New order created. Order Id is $id ${checkout.deliveryAddress.toString}")
+        Success(id)
+      }
+    } else {
+      Failure(new RuntimeException(s"Username: ${checkout.userName} does not exist."))
+
+    }
+  }
+
+  def hasUserWithName(userName: String): Boolean = {
+    val query = users filter { i => i.userName.toLowerCase == userName.toLowerCase }
+    query.nonEmpty
+  }
+
+  private def orderId(): Long = {
+    if (checkouts.isEmpty) {
+      0L
+    } else {
+      (checkouts.map(i => i.orderId.getOrElse(0L)) max) + 1L
+    }
   }
 
   override def getProductWithId(id: Long): Option[ShoppingProduct] = {

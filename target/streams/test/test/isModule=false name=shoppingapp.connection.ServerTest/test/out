@@ -8,3 +8,5 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- should not add item to card if request is invalid[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should successfully retrieve the checkout list[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should not retrieve the checkout list[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should successfully checkout and generate order id[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not generate order id[0m[0m

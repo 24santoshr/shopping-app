@@ -3,14 +3,14 @@ package shoppingapp
 import akka.actor.ActorSystem
 import akka.stream._
 import shoppingapp.daos.ShopDAO
-import shoppingapp.model.{CardItems, ShoppingProduct, ShoppingUser}
+import shoppingapp.model.{CardItems, Checkout, ShoppingProduct, ShoppingUser}
 
 import scala.concurrent.ExecutionContext
 import scala.language.postfixOps
 import scala.util.{Failure, Success, Try}
 
 
-class RequestHandler(configuration: Configuration, authDao: ShopDAO) extends AppLogging {
+class RequestHandler(configuration: Configuration, shopDAO: ShopDAO) extends AppLogging {
 
 
   implicit val system: ActorSystem = Registry.system
@@ -19,12 +19,12 @@ class RequestHandler(configuration: Configuration, authDao: ShopDAO) extends App
 
 
   def initialize(): Unit = {
-    authDao.initialize()
+    shopDAO.initialize()
     log.info("request Handler initialize")
   }
 
   def shutdown(): Unit = {
-    authDao.shutdown()
+    shopDAO.shutdown()
     log.info("shutdown")
   }
 
@@ -37,7 +37,7 @@ class RequestHandler(configuration: Configuration, authDao: ShopDAO) extends App
 
     val noIdUser = ShoppingUser(userId = user.userId, userName = user.userName, emailId = user.emailId, bankAcctNo = user.bankAcctNo)
 
-    authDao.addUser(noIdUser) match {
+    shopDAO.addUser(noIdUser) match {
       case Success(userId) =>
         log.info(s"Successfully added user")
         Success(userId)
@@ -54,7 +54,7 @@ class RequestHandler(configuration: Configuration, authDao: ShopDAO) extends App
 
     val noIdProduct = ShoppingProduct(productId = product.productId, productName = product.productName, price = product.price, currency = product.currency, productDesc = product.productDesc, itemCount = product.itemCount)
 
-    authDao.addProduct(noIdProduct) match {
+    shopDAO.addProduct(noIdProduct) match {
       case Success(productId) =>
         log.info(s"Successfully added product")
         Success(productId)
@@ -71,7 +71,7 @@ class RequestHandler(configuration: Configuration, authDao: ShopDAO) extends App
 
     val noIdCardItems = CardItems(userId = cardItems.userId, userName = cardItems.userName, productId = cardItems.productId, productName = cardItems.productName, prodDesc = cardItems.prodDesc, quantity = cardItems.quantity, price = cardItems.price, currency = cardItems.currency)
 
-    authDao.addCardItems(noIdCardItems) match {
+    shopDAO.addCardItems(noIdCardItems) match {
       case Success(id) =>
         log.info(s"Successfully added item to card")
         Success(id)
@@ -85,7 +85,25 @@ class RequestHandler(configuration: Configuration, authDao: ShopDAO) extends App
     * @return Checkout list
     */
   def getItemList(userName: String): List[CardItems] = {
-    authDao.getCardDetails(userName)
+    shopDAO.getCardDetails(userName)
+  }
+
+
+  /**checkout
+    *
+    * @param cardItems card items to add
+    * @return Id assigned to that card
+    */
+  def handleCheckout(checkout: Checkout): Try[Long] = {
+
+    val noIdCheckout = Checkout(orderId = checkout.orderId, userName = checkout.userName, price = checkout.price, quantity = checkout.quantity, deliveryAddress = checkout.deliveryAddress)
+
+    shopDAO.addCheckout(noIdCheckout) match {
+      case Success(id) =>
+        log.info(s"Successfully added item to card")
+        Success(id)
+      case Failure(x) => Failure(x)
+    }
   }
 }
 
